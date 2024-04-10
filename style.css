@@ -1,13 +1,12 @@
 
-@media (orientation: portrait) {
+@media (max-width: 768px) {
     body {
         font-size: 1.2em;  
-        width: 100%;
-        height: auto;
+        
     }
     .container {
-        max-width: 90%; 
-        padding: 15px; 
+        width: 100%;
+    height: 100vh; 
     }
     #numero {
         width: 100%;   
@@ -29,6 +28,8 @@ body {
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     text-align: center;
+    width: 100%;
+    height: 100%;    
 }
 
 h1 {
