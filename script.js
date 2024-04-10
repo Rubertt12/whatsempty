@@ -39,3 +39,13 @@ function forcarRetrato() {
   
   // Chama a função quando a página for carregada
   window.onload = forcarRetrato;
+
+  window.onload = function() {
+    // Verifica se o dispositivo é mobile
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      // Ajusta o zoom para o container
+      document.querySelector('.container').style.zoom = "1.5";
+      // Scrolla para o container
+      document.querySelector('.container').scrollIntoView();
+    }
+  };
