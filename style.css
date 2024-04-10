@@ -1,7 +1,9 @@
 
-@media (max-width: 768px) {
+@media (orientation: portrait) {
     body {
         font-size: 1.2em;  
+        width: 100%;
+        height: auto;
     }
     .container {
         max-width: 90%; 

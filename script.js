@@ -26,3 +26,16 @@ $(document).ready(function() {
     });
 
 });
+
+
+function forcarRetrato() {
+    // Verifica se o dispositivo está em modo paisagem
+    if (window.orientation !== 0) {
+      // Ajusta o layout para o modo retrato
+      document.body.style.width = "100%";
+      document.body.style.height = "auto";
+    }
+  }
+  
+  // Chama a função quando a página for carregada
+  window.onload = forcarRetrato;
