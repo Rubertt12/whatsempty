@@ -1,51 +1,30 @@
 $(document).ready(function() {
-
     // Função para abrir o WhatsApp
-    function abrirWhatsapp() {
-        const ddd = $("#ddd").val();
+    $("#botao-abrir-whatsapp").click(function() {
         const numero = $("#numero").val();
         // Valida o número de telefone
-        if (!numero || numero.length > 9) {
+        if (!numero || numero.length < 10 || numero.length > 11 || isNaN(Number(numero))) {
             alert("Digite um número de telefone válido");
             return;
         }
+        let ddd = "";
+        let numeroSemDDD = numero;
+        // Verifica se o DDD tem apenas um dígito e adiciona um zero à esquerda
+        if (numero.length === 10) {
+            ddd = numero.substring(0, 1);
+            numeroSemDDD = numero.substring(1);
+        } else {
+            ddd = numero.substring(0, 2);
+            numeroSemDDD = numero.substring(2);
+        }
         // Formata o número para o link do WhatsApp
-        const linkWhatsapp = `https://api.whatsapp.com/send?phone=55${ddd}${numero}`;
+        const linkWhatsapp = `https://api.whatsapp.com/send?phone=55${ddd}${numeroSemDDD}`;
         // Redireciona para o WhatsApp
         window.location.href = linkWhatsapp;
-    }
-
-    // Adiciona evento de clique ao botão
-    $("#botao-abrir-whatsapp").click(abrirWhatsapp);
-
-    // Adiciona evento de tecla Enter ao campo de número
-    $("#numero").keypress(function(event) {
-        if (event.which === 13) {
-            abrirWhatsapp();
-        }
     });
 
+    // Detecta o tema do sistema e aplica o estilo correspondente
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        $("body").addClass("dark-theme");
+    }
 });
-
-
-function forcarRetrato() {
-    // Verifica se o dispositivo está em modo paisagem
-    if (window.orientation !== 0) {
-      // Ajusta o layout para o modo retrato
-      document.body.style.width = "100%";
-      document.body.style.height = "auto";
-    }
-  }
-  
-  // Chama a função quando a página for carregada
-  window.onload = forcarRetrato;
-
-  window.onload = function() {
-    // Verifica se o dispositivo é mobile
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-      // Ajusta o zoom para o container
-      document.querySelector('.container').style.zoom = "1.5";
-      // Scrolla para o container
-      document.querySelector('.container').scrollIntoView();
-    }
-  };
