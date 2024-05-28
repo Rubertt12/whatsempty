@@ -91,5 +91,69 @@ h1 {
 
 .select-style:focus {
     outline: none;
-    border-color: #4f545c; /* Cor da borda ao focar no dark mode */
+    border-color: none; /* Cor da borda ao focar no dark mode */
+}
+
+
+
+
+
+/* CSS para a barra de navegação (navbar) */
+
+
+.navbar {
+  
+    color: #fff;
+    padding: 10px 0; /* Reduzindo o padding vertical */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adicionando uma sombra sutil */
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.logo {
+    margin: 0;
+}
+
+/* Formulário de login */
+.login-form {
+    position: absolute;
+    top: 10px; /* Ajuste a posição vertical */
+    right: 20px; /* Ajuste a posição horizontal */
+    display: flex;
+    align-items: center;
+}
+
+.login-form input {
+    margin-right: 5px;
+}
+
+.login-form button {
+    background-color: #25d366;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.login-form button:hover {
+    background-color: #128c7e;
+}
+
+.login-form a {
+    background-color: #25d366;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    text-decoration: none; /* Remover sublinhado do link */
+    cursor: pointer;
+}
+
+.login-form a:hover {
+    background-color: #128c7e;
 }

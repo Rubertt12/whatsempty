@@ -7,7 +7,20 @@
     <link rel="shortcut icon" type="image/png" href="novo-usuario.png"/>
 </head>
 <body class="dark-theme">
-    <div class="container">
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">Seu Logo Aqui</h1>
+            <div id="login-form" class="login-form">
+                <input type="text" id="username" placeholder="Nome de usuário">
+                <input type="password" id="password" placeholder="Senha">
+                <button id="login-button">Entrar</button>
+                <a href="Login.html">Criar Conta</a>
+
+            </div>
+        </div>
+    </nav>
+    <p>
+        <div class="container">
         <h1>Adicionar Contato</h1>
         <div class="input-group">
             <!-- Campo de entrada com o código do país e dropdown -->
@@ -23,13 +36,15 @@
             <!-- Botão para abrir o WhatsApp -->
             <button id="botao-abrir-whatsapp" class="whatsapp-button">Enviar Mensagem</button>
         </div>
-
-        <div id="Lista-contatos">
-            <h2>já contatados</h2>
-            <ul id="lista-contatos-ul"></ul>
-
+        
+        <div class="container">
+            <h2>já contatado</h2>
+            <!-- Restante do conteúdo da página -->
         </div>
-
+        
+        
+        
+    
         
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
