@@ -6,6 +6,13 @@ $(document).ready(function() {
     function populateCountryCodes() {
         $.get(apiUrl, function(data) {
             const select = $('#codigo-pais');
+            // Ordena os países, colocando o Brasil primeiro
+            data.sort((a, b) => {
+                if (a.name.common === 'Brazil') return -1; // Coloca o Brasil primeiro
+                if (b.name.common === 'Brazil') return 1;
+                return a.name.common.localeCompare(b.name.common); // Ordena os outros países em ordem alfabética
+            });
+
             data.forEach(country => {
                 if (country.idd && country.idd.root && country.idd.suffixes) {
                     const code = country.idd.root + country.idd.suffixes[0];
@@ -64,4 +71,3 @@ $(document).ready(function() {
         document.getElementById("codigo-pais").value = selectedCountryCode;
     });
 });
-
